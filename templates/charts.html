@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+        <h3 class="display-5 fw-bold">Valor del Bitcoin de {{value['bpi']['USD']['code']}} a {{value['bpi'][cur]['code']}} </h3>
+	<p>A la fecha: {{value['time']['updated']}}</p> 
+	<hr>
+	<p>Moneda: {{value['bpi']['USD']['description']}} </p>
+	<p>Valor del Bitcoin: {{value['bpi']['USD']['rate']}} </p>
+	<hr>
+	<p>Moneda: {{value['bpi'][cur]['description']}} </p>
+	<p>Valor del Bitcoin: {{value['bpi'][cur]['rate']}} </p>
+      </div>
+    </div>
+
+{% endblock %}

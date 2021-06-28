@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% if name is defined %}
+
+<div class="p-5 mb-4 bg-light rounded-3">
+      <div class="container-fluid py-5">
+	<h1 class="display-5 fw-bold">Hola {{name}}!</h1>
+        <p class="col-md-8 fs-4">Selecciona la moneda a realizar la conversion.</p>
+      	<div class="btn-group">
+  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+    Selecciona la moneda
+  </button>
+  <ul class="dropdown-menu" style="max-height: 200px; overflow-y: auto;" >
+
+{% for i in support %}
+<a class="dropdown-item" href="/home/{{i['currency']}}">{{ i['country']  }}</a>
+{% endfor %}
+
+  </ul>
+</div>
+
+      </div>
+    </div>
+    {% endif %}
+
+
+{% endblock %}

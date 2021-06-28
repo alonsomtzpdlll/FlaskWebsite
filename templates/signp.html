@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <div class="mb-3 bg-danger rounded-1">
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    </div>
+    {% endif %}
+    {% endwith %}
+
+<div class="card mb-3">
+  <div class="card-body">
+<h3 class="card-title">Registro</h3>
+<hr>
+<form action="/signup" method="POST">
+<div class="mb-3">
+    <label class="form-label">Nombre</label>
+    <input type="text" name="name" class="form-control" id="name">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Username</label>
+    <input type="text" name="username" class="form-control" id="username">
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Password</label>
+    <input type="password" name="password" class="form-control" id="password">
+  </div>
+  <input type="submit" value="Registrar" class="btn btn-primary">
+</form>
+  </div>
+</div>
+
+{% endblock %}
